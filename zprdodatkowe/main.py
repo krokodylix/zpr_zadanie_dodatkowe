@@ -48,7 +48,7 @@ def run_rust_enum(url, word, verbose):
         if line.startswith("[+]"):
             print(Fore.GREEN + line)
         elif verbose:
-            print(Fore.RED + "[-] " + line)
+            print(Fore.RED + line)
 
 if __name__ == '__main__':
     run_enum()
