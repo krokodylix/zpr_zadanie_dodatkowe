@@ -23,19 +23,19 @@ def run_enum(threads, url, wordlist, verbose, clock):
     with open(wordlist, 'r') as f:
         words = [line.strip() for line in f.readlines()]
 
-    # kolejka przechowująca słowa do enumeracji, dostepna dla wszystkich wątków
+    # kolejka przechowująca slowa do enumeracji, dostepna dla wszystkich watkow
     queue = Queue()
     for word in words:
         queue.put(word)
 
-    # funkcja wątkowa, która pobiera słowo z kolejki i wywoluje funkcje run_rust_enum
+    # funkcja watkowa, która pobiera slowo z kolejki i wywoluje funkcje run_rust_enum
     def worker():
         while not queue.empty():
             word = queue.get()
             run_rust_enum(url, word, verbose)
             queue.task_done()
 
-    # stworzenie listy wątków i uruchomienie ich
+    # stworzenie listy watkow i uruchomienie ich
     threads_list = []
     for _ in range(threads):
         t = threading.Thread(target=worker)
@@ -54,7 +54,7 @@ def run_enum(threads, url, wordlist, verbose, clock):
 
 
 def run_rust_enum(url, word, verbose):
-    # w subprocessie uruchimiony zostaje program Rust z odpowiednimi argumentami
+    # w subprocessie uruchomiony zostaje program Rust z odpowiednimi argumentami
     result = subprocess.run(
         ['cargo', 'run', '--release', '--', url, word, '--verbose' if verbose else '--no-verbose'],
         cwd='./content_enum',
