@@ -36,6 +36,7 @@ python3 main.py --threads 8 --url https://ZPR.{domena}/ --wordlist wordlist.txt
 
 Usage: main.py [OPTIONS]
 
+```
 Options:
   --threads INTEGER  Number of threads or subprocesses to be used.  [required]
   --url TEXT         The URL that will be enumerated.  [required]
@@ -43,7 +44,7 @@ Options:
                      for enumeration.  [required]
   --verbose          Print information about errors if set.
   --help             Show this message and exit.
-
+```
 ## ciekawostki wydajnosciowe
 
 ### czas wykonania programu przy uzyciu tego samego slownika, ale roznej liczby watkow
