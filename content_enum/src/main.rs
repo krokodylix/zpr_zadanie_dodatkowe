@@ -30,7 +30,7 @@ async fn main() {
             // jesli status to 200 lub 300 informujemy prorgram Pythonowy o sukciesie
             StatusCode::OK => println!("[+] 200 OK: {}", resp.url()),
             StatusCode::FOUND | StatusCode::MOVED_PERMANENTLY => println!("[+] 300 REDIRECT: {}", resp.url()),
-            // kazdy inny status rowniez jest przekazywany do programu Pythonowego, wyswietlony zostanie tylko jesli flaga verbose jest ustawiona
+            // jesli flaga verbose jest ustawiona kazdy inny status  jest przekazywany do programu Pythonowego
             _ => {
                 if verbose {
                     println!("[-] Other status: {} - {}", resp.status(), resp.url());
