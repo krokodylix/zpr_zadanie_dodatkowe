@@ -14,7 +14,7 @@ Kacper Wielechowski
 ### Windows
 
 ```powershell
-powershell.exe build.ps1
+build.ps1
 ```
 
 
