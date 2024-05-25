@@ -23,12 +23,12 @@ Aplikacja uzywa stringa 'ZPR' aby wskazac miejsce w URLu do ktorego przekazywane
 
 ### enumeracja katalogow/plikow
 ```bash
-python3 main.py --threads 8 --url https://{domena}/ZPR --wordlist wordlist.txt
+python main.py --threads 8 --url https://{domena}/ZPR --wordlist wordlist.txt
 ```
 
 ### enumeracja subdomen
 ```bash
-python3 main.py --threads 8 --url https://ZPR.{domena}/ --wordlist wordlist.txt
+python main.py --threads 8 --url https://ZPR.{domena}/ --wordlist wordlist.txt
 ```
 
 
